@@ -7,18 +7,18 @@ import torch
 from tqdm import tqdm
 
 from rel_extract.aux_fewrel import load_rel_dict_for_fewrel, get_discriminative_data_from_tuples, \
-    tokenizer, get_all_sentences_and_relations_from_json
+    get_all_sentences_and_relations_from_json
 
 _path = os.path.dirname(__file__)
 _rel_dict_filename = os.path.join(_path, '../data/props.json')
 _dev_filename = os.path.join(_path, '../data/val_wiki.json')
 rel_dict = load_rel_dict_for_fewrel(_rel_dict_filename)
 sentences, relations = get_all_sentences_and_relations_from_json(_dev_filename)
-dev_data = get_discriminative_data_from_tuples(sentences, relations, tokenizer, rel_dict)
 all_relations = list(set(relations))
 
 
 def test_with_full_match(model, tokenizer, n_ways):
+    dev_data = get_discriminative_data_from_tuples(sentences, relations, tokenizer, rel_dict)
     random.shuffle(dev_data)
 
     count_dict = {}
@@ -77,7 +77,7 @@ def test_with_full_match(model, tokenizer, n_ways):
     sys.stdout.flush()
 
 
-def run_model(model, rel_map, sentence, relation):
+def run_model(model, tokenizer, rel_map, sentence, relation):
     relation_sentence = rel_map[relation]['sentence']
 
     inputs = torch.tensor([[101] + tokenizer.encode(relation_sentence, add_special_tokens=False)
@@ -101,7 +101,9 @@ def run_generative_full_matches(model,
                                 subj_end_target,
                                 obj_start_target,
                                 obj_end_target):
-    subj_start_ohv, subj_end_ohv, obj_start_ohv, obj_end_ohv, inputs = run_model(model, rel_map, sentence,
+    subj_start_ohv, subj_end_ohv, obj_start_ohv, obj_end_ohv, inputs = run_model(model,
+                                                                                 tokenizer,
+                                                                                 rel_map, sentence,
                                                                                  relation)
     words = [tokenizer.convert_ids_to_tokens([i])[0] for i in list(inputs)[-len(subj_end_ohv):]]
 

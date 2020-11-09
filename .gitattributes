@@ -1,2 +1,6 @@
 data/train_wiki.json filter=lfs diff=lfs merge=lfs -text
 data/val_wiki.json filter=lfs diff=lfs merge=lfs -text
+data/save_bert_large_with_squad0 filter=lfs diff=lfs merge=lfs -text
+data/save_bert_large_without_squad2 filter=lfs diff=lfs merge=lfs -text
+data/save_distillbert_with_squad filter=lfs diff=lfs merge=lfs -text
+data/save_distillbert_without_squad1 filter=lfs diff=lfs merge=lfs -text

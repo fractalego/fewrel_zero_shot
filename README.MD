@@ -1,5 +1,5 @@
 ## Introduction
-Code for the paper [Exploring the zero-shot limit of FewRel]().
+Code for the paper [Exploring the zero-shot limit of FewRel](https://www.aclweb.org/anthology/2020.coling-main.124).
 
 ## Dataset
 The dataset FewRel 1.0 has been created in the paper 

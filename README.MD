@@ -50,3 +50,20 @@ The results as in the paper are
 |(3) Distillbert + SQUAD |81.3±0.4      | 70.0±0.2       |
 |(4) Bert Large + SQUAD  |86.0±0.6      | 76.2±0.4       |
 
+## Cite as
+```bibtex
+@inproceedings{cetoli-2020-exploring,
+    title = "Exploring the zero-shot limit of {F}ew{R}el",
+    author = "Cetoli, Alberto",
+    booktitle = "Proceedings of the 28th International Conference on Computational Linguistics",
+    month = dec,
+    year = "2020",
+    address = "Barcelona, Spain (Online)",
+    publisher = "International Committee on Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.coling-main.124",
+    doi = "10.18653/v1/2020.coling-main.124",
+    pages = "1447--1451",
+    abstract = "This paper proposes a general purpose relation extractor that uses Wikidata descriptions to represent the relation{'}s surface form. The results are tested on the FewRel 1.0 dataset, which provides an excellent framework for training and evaluating the proposed zero-shot learning system in English. This relation extractor architecture exploits the implicit knowledge of a language model through a question-answering approach.",
+}
+```
+

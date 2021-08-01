@@ -1,5 +1,5 @@
 ## Introduction
-Code for the paper [Exploring the zero-shot limit of FewRel](https://www.aclweb.org/anthology/2020.coling-main.124).
+Code for the paper [Exploring the zero-shot limit of FewRel](https://www.aclweb.org/anthology/2020.coling-main.124). This repository implements a zero-shot relation extractor.
 
 ## Dataset
 The dataset FewRel 1.0 has been created in the paper 

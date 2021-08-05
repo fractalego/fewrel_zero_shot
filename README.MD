@@ -14,7 +14,7 @@ relations = ['noble title', 'founding date', 'occupation of a person']
 extractor = RelationExtractor(model, tokenizer, relations)
 ```
 Then the model ranks the surface forms by the belief that the relation 
-connects the entitites in the text 
+connects the entities in the text 
 ```python
 extractor.rank(text='John Smith received an OBE', head='John Smith', tail='OBE')
 
@@ -43,7 +43,7 @@ test_distillbert_without_squad.py
 
 The results as in the paper are
 
-| Model                  | 0-shot5-ways | 0-shot 10-ways |
+| Model                  | 0-shot 5-ways | 0-shot 10-ways |
 |------------------------|--------------|----------------|
 |(1) Distillbert         |70.1±0.5      | 55.9±0.6       |
 |(2) Bert Large          |80.8±0.4      | 69.6±0.5       |
